@@ -29,33 +29,20 @@ npm run dev
 
 ---
 
-## 🖼️ Скриншоты
+## 🎥 Демонстрация работы приложения
 ### Демонстрация кликов в игре
 ![Clicks](./assets/Click.gif)
 
 ---
 ### Демонстрация сброса счёта
 
-![Sbros](./assets/Sbros2.png)
+![Sbros](./assets/Sbros.gif)
 
 ---
 
 ### Демоснтрация теста API
-![Test1](./assets/Test1m.png)
 
----
-![Test2](./assets/Test2m.png)
-
----
-![Test3](./assets/Test3m.png)
-
----
-![Test4](./assets/Test4.png)
-
----
-![Test5](./assets/Test5m.png)
-
----
+![Test_API](./assets/Test_API.gif)
 
 ### Демонстрация API
 
