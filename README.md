@@ -32,7 +32,7 @@ npm run dev
 ## 🎥 Демонстрация
 
 ### Примерный сценарий использования
-![Demonstration of the work](./src//assets/Demonstration.gif)
+![Demonstration of the work](./assets/DemonstrationVIDEO.mp4)
 
 ---
 
@@ -41,12 +41,12 @@ npm run dev
 ### В данной программе доступна смена цветовой темы!
 
 ### Вид программы при светлой теме
-![Light_Theme](./src//assets/White_Theme.png)
+![Light_Theme](./assets/Light.png)
 
 ---
 
 ### Вид программы при тёмной теме
-![Dark_Theme](./src//assets/Dark_Theme.png)
+![Dark_Theme](./assets/Dark.png)
 
 ---
 
