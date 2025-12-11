@@ -1,0 +1,426 @@
+/* Используем стили из вашего React проекта с адаптацией */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #8a2be2;
+    --success-color: #4CAF50;
+    --danger-color: #dc3545;
+    --light-bg: white;
+    --dark-bg: #1a1a2e;
+    --light-text: #333;
+    --dark-text: #ffffff;
+    --light-border: #e9ecef;
+    --dark-border: #6a0dad;
+    --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    min-height: 100vh;
+}
+
+body.light-theme {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--light-text);
+}
+
+body.dark-theme {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: var(--dark-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Game Header */
+.game-header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-light);
+    position: relative;
+}
+
+.dark-theme .game-header {
+    background: rgba(26, 26, 46, 0.9);
+    box-shadow: var(--shadow-dark);
+}
+
+.game-header h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dark-theme .game-header h1 {
+    color: var(--secondary-color);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Game Container */
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.game-container > div {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+}
+
+.dark-theme .game-container > div {
+    background: rgba(26, 26, 46, 0.9);
+    box-shadow: var(--shadow-dark);
+}
+
+/* Score Section */
+.score-display {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 10px 0;
+}
+
+.dark-theme .score-display {
+    color: var(--secondary-color);
+}
+
+.high-score {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+}
+
+.dark-theme .high-score {
+    color: #cccccc;
+}
+
+/* Level Section */
+.level-image {
+    font-size: 3em;
+    text-align: center;
+    margin: 15px 0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.level-info {
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.dark-theme .level-info {
+    color: #cccccc;
+}
+
+/* Progress Section */
+.progress-bar-container {
+    width: 100%;
+    height: 30px;
+    background: #e9ecef;
+    border-radius: 15px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.dark-theme .progress-bar-container {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success-color), #45a049);
+    border-radius: 15px;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-theme .progress-bar {
+    background: linear-gradient(90deg, var(--secondary-color), #6a0dad);
+}
+
+.progress-text {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.next-level {
+    text-align: center;
+    color: #666;
+}
+
+.dark-theme .next-level {
+    color: #cccccc;
+}
+
+/* Click Section */
+.click-button {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: all 0.1s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dark-theme .click-button {
+    background: linear-gradient(135deg, var(--secondary-color), #6a0dad);
+}
+
+.click-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.click-button:hover {
+    filter: brightness(1.1);
+}
+
+.click-effect {
+    position: absolute;
+    color: #ffeb3b;
+    font-weight: bold;
+    font-size: 1.2em;
+    animation: floatUp 0.5s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.click-stats {
+    text-align: center;
+    color: #666;
+    margin-top: 10px;
+}
+
+.dark-theme .click-stats {
+    color: #cccccc;
+}
+
+/* Controls Section */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dark-theme .control-btn {
+    background: var(--secondary-color);
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#resetButton {
+    background: var(--danger-color);
+}
+
+#autoClickButton {
+    background: var(--success-color);
+}
+
+/* API Section */
+.endpoints {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.endpoint {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.dark-theme .endpoint {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.endpoint code {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+.dark-theme .endpoint code {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.api-test-btn {
+    padding: 8px 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.api-test-btn:hover {
+    background: #3a7bc8;
+}
+
+/* Response Section */
+#apiResponse {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.dark-theme #apiResponse {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--dark-border);
+    color: #e0e0e0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .game-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .click-button {
+        height: 150px;
+        font-size: 1.2em;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .theme-toggle {
+        position: static;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.game-container > div {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Highlight for API calls */
+.api-call {
+    animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+    0% { background-color: rgba(74, 144, 226, 0.3); }
+    100% { background-color: transparent; }
+}

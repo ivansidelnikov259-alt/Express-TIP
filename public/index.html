@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кликер Игра - Express версия</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <header class="game-header">
+            <h1><i class="fas fa-gamepad"></i> Кликер Игра - Express API</h1>
+            <div class="theme-toggle">
+                <button id="themeToggle">
+                    <i class="fas fa-moon"></i> Тема
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-container">
+                <div class="score-section">
+                    <h2><i class="fas fa-star"></i> Текущий счет</h2>
+                    <div class="score-display" id="scoreDisplay">0</div>
+                    <div class="high-score">
+                        <i class="fas fa-trophy"></i> Рекорд: <span id="highScore">0</span>
+                    </div>
+                </div>
+
+                <div class="level-section">
+                    <h2><i class="fas fa-chart-line"></i> Уровень игры</h2>
+                    <div class="level-image" id="levelImage">🎮 Начало пути!</div>
+                    <div class="level-info">
+                        Уровень: <span id="currentLevel">0</span> |
+                        Название: <span id="levelName">Начальный</span>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <h2><i class="fas fa-hourglass-half"></i> Прогресс до следующего уровня</h2>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">0%</div>
+                    <div class="next-level">
+                        До следующего уровня: <span id="nextLevelThreshold">100</span> кликов
+                    </div>
+                </div>
+
+                <div class="click-section">
+                    <h2><i class="fas fa-mouse-pointer"></i> Кликай!</h2>
+                    <button class="click-button" id="clickButton">
+                        <i class="fas fa-hand-pointer"></i> КЛИКАЙ!
+                        <div class="click-effect">+1</div>
+                    </button>
+                    <div class="click-stats">
+                        Всего кликов: <span id="totalClicks">0</span> |
+                        Кликов/сек: <span id="clicksPerSecond">0.00</span>
+                    </div>
+                </div>
+
+                <div class="controls-section">
+                    <h2><i class="fas fa-cogs"></i> Управление игрой</h2>
+                    <div class="buttons">
+                        <button class="control-btn" id="resetButton">
+                            <i class="fas fa-redo"></i> Сбросить игру
+                        </button>
+                        <button class="control-btn" id="testApiButton">
+                            <i class="fas fa-code"></i> Тест API
+                        </button>
+                        <button class="control-btn" id="autoClickButton">
+                            <i class="fas fa-robot"></i> Автоклик (10 сек)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="api-section">
+                    <h2><i class="fas fa-plug"></i> API Endpoints</h2>
+                    <div class="endpoints">
+                        <div class="endpoint">
+                            <code>GET /api/game/score</code>
+                            <button class="api-test-btn" data-endpoint="/api/game/score">Тест</button>
+                        </div>
+                        <div class="endpoint">
+                            <code>POST /api/game/click</code>
+                            <button class="api-test-btn" data-endpoint="/api/game/click" data-method="POST">Тест</button>
+                        </div>
+                        <div class="endpoint">
+                            <code>GET /api/game/level</code>
+                            <button class="api-test-btn" data-endpoint="/api/game/level">Тест</button>
+                        </div>
+                        <div class="endpoint">
+                            <code>GET /api/game/progress/100</code>
+                            <button class="api-test-btn" data-endpoint="/api/game/progress/100">Тест</button>
+                        </div>
+                        <div class="endpoint">
+                            <code>POST /api/game/reset</code>
+                            <button class="api-test-btn" data-endpoint="/api/game/reset" data-method="POST">Тест</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-section">
+                    <h2><i class="fas fa-server"></i> Ответ сервера</h2>
+                    <pre id="apiResponse">Нажмите "Тест API" чтобы увидеть ответы</pre>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Кликер Игра на Express.js</p>
+            <p>API документация доступна в консоли разработчика (F12)</p>
+        </footer>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
